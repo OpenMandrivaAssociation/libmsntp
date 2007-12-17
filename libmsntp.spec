@@ -10,7 +10,6 @@ License:	GPL
 URL:		http://snarfed.org/space/libmsntp
 Source0:	http://ryan.barrett.name/%{name}-%{version}.tar.bz2
 Patch0:		libmsntp-1.6a-shared.diff
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 libmsntp is a full-featured, compact, portable SNTP library.
