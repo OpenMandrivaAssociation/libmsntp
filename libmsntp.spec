@@ -1,7 +1,7 @@
 %define	major 1
 %define libname	%mklibname msntp %{major}
 
-Summary:	Libmsntp is a full-featured, compact, portable SNTP library
+Summary:	Full-featured, compact, portable SNTP library
 Name:		libmsntp
 Version:	1.6a
 Release:	%mkrel 3
@@ -21,7 +21,7 @@ of NTP, which allows precise synchronization of system clocks over
 a best-effort network. 
 
 %package -n	%{libname}
-Summary:	Libmsntp is a full-featured, compact, portable SNTP library
+Summary:	Full-featured, compact, portable SNTP library
 Group:          System/Libraries
 
 %description -n	%{libname}
