@@ -1,0 +1,31 @@
+--- Makefile	2005-01-20 20:28:17.000000000 +0100
++++ Makefile.oden	2005-01-21 00:44:42.209651062 +0100
+@@ -115,7 +115,7 @@
+ SRCS = main.c unix.c internet.c socket.c timing.c libmsntp.c
+ OBJS = $(SRCS:.c=.o)
+ 
+-all: libmsntp example
++all: shared static
+ 
+ clean:
+ 	rm -f *.o *.a *.so a.out core example $(PKGNAME).tar.gz *~
+@@ -133,10 +133,14 @@
+ 	ln -s $(PREFIX)/lib/libmsntp.so.$(VERSION) $(PREFIX)/lib/libmsntp.so
+ 	install -b -m 644 libmsntp.a $(PREFIX)/lib/libmsntp.a
+ 
+-example: libmsntp
++example: shared
+ 	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -L. -lmsntp -o $@ example.c
+ 
+-libmsntp: $(OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -shared -o $@.so $(OBJS)
+-	ar -r $@.a $(OBJS)
+-	ranlib $@.a
++shared: $(OBJS)
++	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -shared -Wl,-soname=libmsntp.so.1 \
++	-o libmsntp.so.1 $(OBJS)
++	ln -snf libmsntp.so.1 libmsntp.so
++
++static: $(OBJS)
++	ar -r libmsntp.a $(OBJS)
++	ranlib libmsntp.a
