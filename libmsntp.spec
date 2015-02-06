@@ -4,7 +4,7 @@
 Summary:	Full-featured, compact, portable SNTP library
 Name:		libmsntp
 Version:	1.6a
-Release:	%mkrel 8
+Release:	9
 Group:		System/Libraries
 License:	GPL
 URL:		http://snarfed.org/space/libmsntp
