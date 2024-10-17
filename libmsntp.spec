@@ -7,7 +7,7 @@ Version:	1.6a
 Release:	9
 Group:		System/Libraries
 License:	GPL
-URL:		http://snarfed.org/space/libmsntp
+URL:		https://snarfed.org/space/libmsntp
 Source0:	http://ryan.barrett.name/%{name}-%{version}.tar.bz2
 Patch0:		libmsntp-1.6a-shared.diff
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
